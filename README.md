@@ -41,7 +41,7 @@
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                   ║
-║   🎓  NIT Durgapur · CSE · Batch 2024–2028 · CGPA: 9.53/1                        ║
+║   🎓  NIT Durgapur · CSE · Batch 2024–2028 · CGPA: 9.53/10                        ║
 ║   📍  West Bengal, India                                                         ║
 ║   🏀  Represented NIT Durgapur at Inter-NIT Basketball Championship 2025–26      ║
 ║   🧩  1000+ Problems · LeetCode 1705 · CodeChef 3★ · Codeforces Pupil 1202      ║
@@ -120,6 +120,7 @@ const himanshu = {
       </a>
       <br><br>
       <kbd>Rating</kbd> <strong>1605</strong>
+      <br>
       <kbd>Stars</kbd> <strong>3 ⭐</strong>
       <br>
       <br><br>
@@ -131,6 +132,7 @@ const himanshu = {
       </a>
       <br><br>
       <kbd>Rating</kbd> <strong>1200</strong>
+      <br>
       <kbd>Rank</kbd> Pupil
       <br>
       <br><br>
