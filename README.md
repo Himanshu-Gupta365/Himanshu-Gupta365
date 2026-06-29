@@ -4,8 +4,12 @@
 
 </div>
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=800&color=6C63FF&center=true&vCenter=true&width=750&lines=🚀+Building+AI-powered+full-stack+apps;🧩+1000%2B+problems+solved+across+platforms;🏀+Inter-NIT+Basketball+player;🎓+NIT+Durgapur+%7C+CSE+%7C+CGPA+9.53%2F10;💡+Turning+ideas+into+production-ready+products" alt="Typing SVG" />
+</p> -->
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=28&pause=1000&color=6C63FF&center=true&vCenter=true&width=600&lines=Competitive+Programmer+%F0%9F%94%A5;Algorithm+Pupil+%E2%9A%A1;Full+Stack+Developer+%F0%9F%92%BB;Problem+Solver+%F0%9F%A7%A9" alt="Typing SVG" />
 </p>
 
 <p align="center">
