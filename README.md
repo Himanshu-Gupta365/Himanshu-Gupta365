@@ -25,7 +25,7 @@
     <img src="https://img.shields.io/badge/Codeforces-1202-1F8ACB?style=flat-square&logo=codeforces&logoColor=white&labelColor=0D1117"/>
   </a>
   <a href="mailto:himanshucse49@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-himanshucse49-D14836?style=flat-square&logo=gmail&logoColor=white&labelColor=0D1117"/>
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white&labelColor=0D1117"/>
   </a>
   <img src="https://komarev.com/ghpvc/?username=Himanshu-Gupta365&style=flat-square&color=6C63FF&labelColor=0D1117&label=Profile+Views"/>
 </p>
@@ -40,7 +40,7 @@
 ║   🎓  NIT Durgapur · CSE · Batch 2024–2028 · CGPA: 9.53/1                        ║
 ║   📍  West Bengal, India                                                         ║
 ║   🏀  Represented NIT Durgapur at Inter-NIT Basketball Championship 2025–26      ║
-║   🧩  1000+ Problems · LeetCode 1705 · CodeChef 3★ · Codeforces Pupil 1200       ║
+║   🧩  1000+ Problems · LeetCode 1705 · CodeChef 3★ · Codeforces Pupil 1202      ║
 ║   💼  Building AI-integrated full-stack apps that actually ship to production    ║
 ║                                                                                  ║
 ╚══════════════════════════════════════════════════════════════════════════════════╝
@@ -115,8 +115,8 @@ const himanshu = {
         <img src="https://img.shields.io/badge/-%E2%AD%90%E2%AD%90%20CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white"/>
       </a>
       <br><br>
-      <kbd>Rating</kbd> <strong>1587</strong>
-      <kbd>Stars</kbd> <strong>2 ⭐</strong>
+      <kbd>Rating</kbd> <strong>1605</strong>
+      <kbd>Stars</kbd> <strong>3 ⭐</strong>
       <br>
       <br><br>
     </td>
@@ -302,7 +302,7 @@ exploring:
 | ⭐⭐⭐ | **CodeChef 3-Star** | Rating 1605 on handle `funny_apes_10` |
 | 🟣 | **Codeforces Pupil** | Rating 1202 on handle `Arisu7` · Active contest grinder |
 | 🧩 | **1000+ Problems Solved** | Across LeetCode, CodeChef & Codeforces combined |
-| 🏫 | 9.53/10.0 at NIT Durgapur, Batch of 2028 |
+| 🏫 | **Trying Hard** | 9.53/10.0 at NIT Durgapur, Batch of 2028 |
 | 🏀 | **Inter-NIT Basketball** | Represented NIT Durgapur at NIT Karnataka, Surathkal 2025–26 |
 
 </div>
