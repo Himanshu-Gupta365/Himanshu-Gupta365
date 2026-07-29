@@ -151,165 +151,9 @@ const himanshu = {
   </tr>
 </table>
 
-</div>
-
----
-
-## 🎮 LEETCODE HEATMAP SNAKE GAME.
-
-<div align="center">
-
-<p><strong>Watch the snake devour my LeetCode problems! 🐍💚</strong></p>
-
-<canvas id="heatmapSnakeCanvas" width="900" height="500" style="border: 3px solid #28a745; background: #0D1117; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);"></canvas>
-
-<p style="margin-top: 12px; font-size: 18px; font-weight: bold; color: #28a745;">
-  🎯 Problems Eaten: <span id="heatmapScoreDisplay" style="color: #28a745; font-size: 22px;">0</span> / 900
-</p>
-
-<p style="font-size: 12px; color: #8B949E; margin-top: 8px;">
-  🟩 = LeetCode Problems (Consumed by the snake!) | 🐍 = Blue Snake
-</p>
+<img src="https://leetcard.jacoblin.cool/Himanshu_365?theme=dark&font=Fira%20Code&ext=heatmap" alt="LeetCode Stats" width="70%"/>
 
 </div>
-
-<script>
-  const canvas = document.getElementById('heatmapSnakeCanvas');
-  const ctx = canvas.getContext('2d');
-  
-  const cellSize = 18;
-  const cols = Math.floor(canvas.width / cellSize);
-  const rows = Math.floor(canvas.height / cellSize);
-  
-  // LeetCode color ramp (like GitHub contributions)
-  const HEATMAP_COLORS = {
-    empty: '#0D1117',
-    level0: '#0F3818', // very dark green
-    level1: '#176617', // dark green
-    level2: '#28a745', // medium green
-    level3: '#39d353', // bright green
-    level4: '#7ee787'  // light green
-  };
-  
-  // Create heatmap grid
-  let heatmap = [];
-  for (let y = 0; y < rows; y++) {
-    heatmap[y] = [];
-    for (let x = 0; x < cols; x++) {
-      heatmap[y][x] = Math.floor(Math.random() * 4) + 1; // levels 1-4
-    }
-  }
-  
-  // Snake state
-  let snake = [
-    { x: Math.floor(cols / 2), y: Math.floor(rows / 2) },
-    { x: Math.floor(cols / 2) - 1, y: Math.floor(rows / 2) },
-    { x: Math.floor(cols / 2) - 2, y: Math.floor(rows / 2) }
-  ];
-  
-  let score = 0;
-  let direction = { x: 1, y: 0 };
-  let nextDirection = { x: 1, y: 0 };
-  
-  function getHeatmapColor(level) {
-    if (level === 0) return HEATMAP_COLORS.empty;
-    if (level === 1) return HEATMAP_COLORS.level1;
-    if (level === 2) return HEATMAP_COLORS.level2;
-    if (level === 3) return HEATMAP_COLORS.level3;
-    if (level === 4) return HEATMAP_COLORS.level4;
-    return HEATMAP_COLORS.empty;
-  }
-  
-  function update() {
-    direction = nextDirection;
-    
-    const head = snake[0];
-    
-    // AI pathfinding - find highest intensity heatmap cell nearby
-    let bestTarget = null;
-    let bestIntensity = 0;
-    let bestDist = Infinity;
-    
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        if (heatmap[y][x] > 0) {
-          const dist = Math.abs(x - head.x) + Math.abs(y - head.y);
-          const intensity = heatmap[y][x];
-          
-          // Prioritize high intensity cells closer to us
-          if (intensity > bestIntensity || (intensity === bestIntensity && dist < bestDist)) {
-            bestTarget = { x, y };
-            bestIntensity = intensity;
-            bestDist = dist;
-          }
-        }
-      }
-    }
-    
-    if (bestTarget) {
-      const dx = bestTarget.x - head.x;
-      const dy = bestTarget.y - head.y;
-      
-      if (Math.abs(dx) > Math.abs(dy)) {
-        nextDirection = dx > 0 ? { x: 1, y: 0 } : { x: -1, y: 0 };
-      } else {
-        nextDirection = dy > 0 ? { x: 0, y: 1 } : { x: 0, y: -1 };
-      }
-      direction = nextDirection;
-    }
-    
-    const nextHeadX = (head.x + direction.x + cols) % cols;
-    const nextHeadY = (head.y + direction.y + rows) % rows;
-    
-    snake.unshift({ x: nextHeadX, y: nextHeadY });
-    
-    if (heatmap[nextHeadY][nextHeadX] > 0) {
-      score += heatmap[nextHeadY][nextHeadX];
-      heatmap[nextHeadY][nextHeadX] = 0;
-    }
-    
-    if (snake.length > 3) {
-      snake.pop();
-    }
-    
-    document.getElementById('heatmapScoreDisplay').textContent = score;
-  }
-  
-  function draw() {
-    ctx.fillStyle = HEATMAP_COLORS.empty;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw heatmap
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        ctx.fillStyle = getHeatmapColor(heatmap[y][x]);
-        ctx.fillRect(x * cellSize + 1, y * cellSize + 1, cellSize - 2, cellSize - 2);
-      }
-    }
-    
-    // Draw snake
-    for (let i = 0; i < snake.length; i++) {
-      const segment = snake[i];
-      ctx.fillStyle = i === 0 ? '#79C0FF' : '#58A6FF';
-      ctx.fillRect(segment.x * cellSize + 3, segment.y * cellSize + 3, cellSize - 6, cellSize - 6);
-      
-      // Head glow
-      if (i === 0) {
-        ctx.strokeStyle = '#79C0FF';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(segment.x * cellSize + 3, segment.y * cellSize + 3, cellSize - 6, cellSize - 6);
-      }
-    }
-  }
-  
-  function gameLoop() {
-    update();
-    draw();
-    setTimeout(gameLoop, 80);
-  }
-  
-  gameLoop();
-</script>
 
 ---
 
@@ -431,6 +275,24 @@ exploring:
 **Tools & DevOps**
 
 <img src="https://skillicons.dev/icons?i=git,github,docker,linux,vscode&theme=dark" />
+
+</div>
+
+---
+
+## 📊 GITHUB AT A GLANCE
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Himanshu-Gupta365&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6C63FF&icon_color=F8D866&text_color=C9D1D9&rank_icon=github&include_all_commits=true&count_private=true" />
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Himanshu-Gupta365&theme=tokyonight&hide_border=true&background=0D1117&stroke=6C63FF&ring=6C63FF&fire=F8D866&currStreakLabel=6C63FF&sideLabels=C9D1D9" />
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Himanshu-Gupta365&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6C63FF&text_color=C9D1D9&langs_count=8" />
+<img width="49%" src="https://github-readme-activity-graph.vercel.app/graph?username=Himanshu-Gupta365&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=6C63FF&line=F8D866&point=FFFFFF&area=true" />
+
+**🏆 GitHub Trophies**
+
+<img src="https://github-profile-trophy.vercel.app/?username=Himanshu-Gupta365&theme=tokyonight&no-frame=true&margin-w=6&row=1&column=7" width="100%"/>
 
 </div>
 
